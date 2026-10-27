@@ -6,7 +6,7 @@ Meta Questの映像をWindows PCで一覧・拡大・投影するアプリです
 
 ## Connectから始める
 
-1. [Connect専用Setup0.4.1](https://github.com/noriki-mochizuki/multi-quest-connect/releases/tag/setup-v0.4.1)から `MultiQuestConnect-Setup.zip` を取得し、全ファイルを展開して `Multi Quest Connect Setup.exe` を開きます。ViewerやQuestBladeが未導入でも実行できます。Connect導入済みなら「そのまま使う」が初期選択です。
+1. [Connect専用Setup0.4.2](https://github.com/noriki-mochizuki/multi-quest-connect/releases/tag/setup-v0.4.2)から `MultiQuestConnect-Setup.zip` を取得し、全ファイルを展開して `Multi Quest Connect Setup.exe` を開きます。ViewerやQuestBladeが未導入でも実行できます。Connect導入済みなら「そのまま使う」が初期選択です。
 2. Questを同じLANへつなぎ、USB接続します。信頼するPCでは、Quest内のUSBデバッグ許可で「このパソコンから常に許可」を本人が選びます。WindowsのSetupで対象Questを選び、導入・設定を実行します。
 3. 完了後USBを外し、下記Viewerを同じWindowsユーザーへインストールして起動します。登録済みQuestへ接続し、利用者がQuest上で起動したVRアプリを表示します。
 
