@@ -1,12 +1,12 @@
 # Multi Quest Viewer
 
-Questの映像をWindows PCで一覧表示するアプリです。最新版は **0.10.0**。通常画面と対応ゲームの配信を同じA〜Fの枠で扱い、配信方式を選ぶ操作をなくしました。
+Questの映像をWindows PCで一覧表示するアプリです。最新版は **0.10.1**。通常画面と対応ゲームの配信を同じA〜Fの枠で扱い、配信方式を選ぶ操作をなくしました。
 
 ## 導入と使い方
 
 1. [公開Release](https://github.com/noriki-mochizuki/multi-quest-viewer/releases/latest) の **Multi-Quest-Viewer-Setup.exe** をダウンロードしてインストールします。GitHub認証キーは不要です。
 2. 初回だけ、同じPCで [Connect専用USB Setup 0.4.3](https://github.com/noriki-mochizuki/multi-quest-connect/releases/tag/v0.4.0) を実行します。ViewerやQuestBladeが未導入でも準備できます。Quest内のUSB許可は本人が操作し、信頼するPCでは「このパソコンから常に許可」を選びます。
-3. PCとQuestを同じLANにつなぎ、USBを外してViewerを開きます。「端末とA〜Fを確認」で、Questを一度ずつA〜Fに登録します。再接続やアプリ再起動後も保持します。別PCの初回利用では、そのPCで信頼確認・USB準備が必要になる場合があります。
+3. PCとQuestを同じLANにつなぎ、USBを外してViewerを開きます。各映像枠の「…」→「割り当て」からA〜Fを選びます。使用中の文字を移す場合は確認が出ます。一覧は全体確認・一括変更用です。再接続やアプリ再起動後も保持します。別PCの初回利用では、そのPCで信頼確認・USB準備が必要になる場合があります。
 
 Quest上で使いたいVRアプリを起動してください。QuestBladeは任意です。対応ゲームから認証済み配信が届くと、同じQuestの枠をゲーム映像へ切り替え、ゲーム配信が止まると元のQuest画面へ戻します。混在表示にも対応します。ゲーム映像と通常画面を二重にデコードし続けません。
 
