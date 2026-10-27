@@ -1,45 +1,31 @@
 # Multi Quest Viewer
 
-Meta Questの映像をWindows PCで一覧・拡大・投影するアプリです。Windows 11 x64向けのプレビュー版です。
+Questの映像をWindows PCで一覧表示するアプリです。最新版は **0.10.0**。通常画面と対応ゲームの配信を同じA〜Fの枠で扱い、配信方式を選ぶ操作をなくしました。
 
-**基本セットはMulti Quest Viewer＋Multi Quest Connectです。QuestBladeは必要ありません。**
+## 導入と使い方
 
-## Connectから始める
+1. [公開Release](https://github.com/noriki-mochizuki/multi-quest-viewer/releases/latest) の **Multi-Quest-Viewer-Setup.exe** をダウンロードしてインストールします。GitHub認証キーは不要です。
+2. 初回だけ、同じPCで [Connect専用USB Setup 0.4.3](https://github.com/noriki-mochizuki/multi-quest-connect/releases/tag/v0.4.0) を実行します。ViewerやQuestBladeが未導入でも準備できます。Quest内のUSB許可は本人が操作し、信頼するPCでは「このパソコンから常に許可」を選びます。
+3. PCとQuestを同じLANにつなぎ、USBを外してViewerを開きます。「端末とA〜Fを確認」で、Questを一度ずつA〜Fに登録します。再接続やアプリ再起動後も保持します。別PCの初回利用では、そのPCで信頼確認・USB準備が必要になる場合があります。
 
-1. [Connect専用Setup0.4.2](https://github.com/noriki-mochizuki/multi-quest-connect/releases/tag/setup-v0.4.2)から `MultiQuestConnect-Setup.zip` を取得し、全ファイルを展開して `Multi Quest Connect Setup.exe` を開きます。ViewerやQuestBladeが未導入でも実行できます。Connect導入済みなら「そのまま使う」が初期選択です。
-2. Questを同じLANへつなぎ、USB接続します。信頼するPCでは、Quest内のUSBデバッグ許可で「このパソコンから常に許可」を本人が選びます。WindowsのSetupで対象Questを選び、導入・設定を実行します。
-3. 完了後USBを外し、下記Viewerを同じWindowsユーザーへインストールして起動します。登録済みQuestへ接続し、利用者がQuest上で起動したVRアプリを表示します。
+Quest上で使いたいVRアプリを起動してください。QuestBladeは任意です。対応ゲームから認証済み配信が届くと、同じQuestの枠をゲーム映像へ切り替え、ゲーム配信が止まると元のQuest画面へ戻します。混在表示にも対応します。ゲーム映像と通常画面を二重にデコードし続けません。
 
-PCごとにADBの信頼が必要です。別PCで初めて使う場合は、そのPCでConnectのUSBセットアップ・標準の信頼確認を行ってください。認証済みPCでの普段の利用とは異なります。キーは作り直しません。初回許可を自動で押す機能はありません。
+## 操作
 
-ConnectはQuest内で開いて単独更新できます。ViewerやQuestBladeを更新のために起動する必要はありません。更新確認の通信失敗はLAN接続を妨げません。
+- **F：全画面にする／戻す。Esc：全画面を終了。** 常設の「全画面を終了」ボタンでも戻れます。別ウィンドウは開きません。
+- A〜Fまたは映像クリックで拡大。「すべて」またはEscで一覧へ戻ります。ゲーム映像内はダブルクリックでも拡大できます。
+- 各枠の「音声」で、そのQuest 1台だけの音をPCで再生します。起動時はミュートです。選択した枠はミント色の太枠になります。
+- 各枠の「…」から画質・停止／再開・端末情報を操作します。基本は軽量画質を推奨します。
+- 右上に本体の電池残量と充電状態を表示します。通常20秒間隔で更新し、取得不能・切断・60秒を超えた古い値は「—」です。
 
-## インストール
+## 端末IDと更新
 
-[最新のReleases](https://github.com/noriki-mochizuki/multi-quest-viewer/releases/latest)から **Multi-Quest-Viewer-Setup.exe** を取得して実行してください。GitHubの認証キーは不要です。インストール後はスタートメニューから起動します。.NETと転送用ツールを同梱し、ゲーム配信にはMicrosoft WebView2 Runtimeを使用します。
+共通端末IDは本体のシリアルを省略せず表示します。IDとA〜Fの対応はPCに保存します。共通IDにはConnect 0.4.0以降と対応ゲームの新版が必要です。旧版の映像も利用できますが、共通ID未設定時は旧配信との手動対応を残しています。Connect更新後はViewerを開き直してください。初回ID反映には20秒程度かかる場合があります。認証用の配信ID・鍵は別の内部情報として保持し、既存認証を消しません。
 
-旧ポータブル版の設定を引き継ぐ場合は、旧`Multi Quest Viewer.exe`があるフォルダーにインストーラーを置いて実行してください。設定・A〜F・接続情報はユーザーのローカル領域へ保存し、上書き更新で保持します。設定内「更新を確認する」から、整合性検査後のインストーラーを起動できます。
+Viewerは設定から公開GitHubの更新を確認できます。ConnectもQuest内で公開Releaseから更新でき、QuestBladeの導入は不要です。オフラインでも既存LAN機能を使えます。音声の取得可否はQuest OS・対象アプリ側の制限にも依存します。
 
-Windowsコード署名は未導入です。SmartScreen等で発行元確認が表示される場合があります。添付のSHA256SUMS.txtで取得ファイルを照合できます。
+## 対応と検証範囲
 
-## 使い方
+Windows 11 x64、Quest 2/3向けのプレビューです。**実機受入前の同時映像は合計2台まで**。A〜Fの6枠は、実機6台を検証済みという意味ではありません。USBなし同一LANの実機2台、別途オフラインLAN、その後の4台→6台・30分連続受入は未実施です。PCの模擬映像、実ローカルWebRTC、H.264/D3D11、全画面、インストーラー検査は実機成功と区別します。
 
-- 通常のQuest表示：最初にUSBでセットアップし、信頼するPCではQuest内で「このパソコンから常に許可」を選びます。その後は同一LANへ接続します。標準の許可画面は自動操作しません。
-- QuestBladeのゲーム配信：対応するゲーム側で配信をONにします。USB/ADB不要です。ゲーム本体はこの公開リポジトリに含みません。
-- 個体ラベル：設定で同じ実機の通常表示とゲーム配信をA〜Fへ手動で対応付けます。接続順・IPが変わっても維持し、未接続枠も固定です。
-- 音声：各画面の「音声」を選ぶと、その1台だけPCで再生します。起動時はミュート。別の台を選ぶと前の音声は停止します。ゲーム配信の音声にはQuestBlade0.1.19以降が必要です。OSや対象アプリが音声取得を制限する場合は取得できません。
-- Fキーで投影のON/OFF、Escで解除。映像をクリックして拡大できます。
-
-ADBは、自分で起動したサーバーだけを管理し、既存の共有サーバーを終了しません。初回のQuest許可、Developer Mode、WindowsのLAN通信許可は利用者が行います。保護されたコンテンツの取得制限を回避する機能はありません。
-
-## 検証段階
-
-PCでの自動テスト、CPU/D3D11の実H.264復号、切断分離、Windows上のUnityからWebView2へのOpus受信、インストール・更新・アンインストールを確認しています。
-
-物理Quest2台のUSBなし同一LAN、別途オフラインLAN、Quest実音声、4→6台・30分連続、Surface Laptop Studioでの性能は未確認です。**実機同時上限は2台**を維持しています。合成6画面の成功は、実機6台の受入を意味しません。まず軽量画質を使用してください。
-
-## 配布物・ライセンス
-
-このリポジトリはバイナリ配布用です。Viewerのソース、端末設定・ログ、認証キー、ゲームのAPK・素材は公開していません。Viewerバイナリの利用・再配布条件は添付LICENSE.txtを参照してください。
-
-公式scrcpy4.1、公式ADB37.0.0、.NET/WPF/ASP.NET Core、WebView2等のライセンスとNOTICEをインストーラーへ同梱しています。FFmpeg9.0.1は公式ソースから外部コーデック依存なしでビルドし、完全な対応ソース・実構成・再ビルド手順を **ffmpeg-corresponding-source.zip** として同梱・添付しています。各OSSの権利は各ライセンスに従います。
+Windowsのコード署名はありません。scrcpy 4.1、最小構成FFmpeg、.NET/WebView2等の告知を同梱しています。FFmpegの対応ソースとビルド手順もインストーラー／Releaseに含めます。秘密情報、端末設定、ログ、QuestBlade本体やゲーム素材はこの公開配布物に含めません。
