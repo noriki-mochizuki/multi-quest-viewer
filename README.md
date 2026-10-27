@@ -2,6 +2,18 @@
 
 Meta Questの映像をWindows PCで一覧・拡大・投影するアプリです。Windows 11 x64向けのプレビュー版です。
 
+**基本セットはMulti Quest Viewer＋Multi Quest Connectです。QuestBladeは必要ありません。**
+
+## Connectから始める
+
+1. [Connectの公開Releases](https://github.com/noriki-mochizuki/multi-quest-connect/releases/latest)から `MultiQuestConnect-Setup.zip` を取得し、全ファイルを展開して `Multi Quest Connect Setup.exe` を開きます。ViewerやQuestBladeが未導入でも実行できます。
+2. Questを同じLANへつなぎ、USB接続します。信頼するPCでは、Quest内のUSBデバッグ許可で「このパソコンから常に許可」を本人が選びます。WindowsのSetupで対象Questを選び、導入・設定を実行します。
+3. 完了後USBを外し、下記Viewerを同じWindowsユーザーへインストールして起動します。登録済みQuestへ接続し、利用者がQuest上で起動したVRアプリを表示します。
+
+PCごとにADBの信頼が必要です。別PCで初めて使う場合は、そのPCでConnectのUSBセットアップ・標準の信頼確認を行ってください。認証済みPCでの普段の利用とは異なります。キーは作り直しません。初回許可を自動で押す機能はありません。
+
+ConnectはQuest内で開いて単独更新できます。ViewerやQuestBladeを更新のために起動する必要はありません。更新確認の通信失敗はLAN接続を妨げません。
+
 ## インストール
 
 [最新のReleases](https://github.com/noriki-mochizuki/multi-quest-viewer/releases/latest)から **Multi-Quest-Viewer-Setup.exe** を取得して実行してください。GitHubの認証キーは不要です。インストール後はスタートメニューから起動します。.NETと転送用ツールを同梱し、ゲーム配信にはMicrosoft WebView2 Runtimeを使用します。
